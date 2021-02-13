@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<a href="/Users/AddUser" class="btn btn-primary">Add User</a>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">User# </th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Address</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row"> @item.ID  </th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.UserName</td>
+                <td>@item.Address</td>
+                <td><a class="btn btn-danger" href="/Users/Delete/@item.ID">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
